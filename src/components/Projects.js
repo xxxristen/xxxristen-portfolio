@@ -101,7 +101,7 @@ const projectList = [
 
 export const Projects = () => {
     return (
-        <>
+        <div className='hidden' id='projects'>
             <div className="projectHeaderTitle fs-5 text-center text-uppercase">
                 Some of the things that I&#39;ve built
             </div>
@@ -109,7 +109,7 @@ export const Projects = () => {
             <div className="container mb-4" id="gridMainContainer">
                 <div className="grid-container">
                     {Object.keys(projectList).map(key => (
-                        <div className="grid" key={key}>
+                        <div className="grid hidden" key={key}>
                             <div className="item">
                                 <img
                                     src={projectList[key].projectSS}
@@ -136,13 +136,13 @@ export const Projects = () => {
                                         Code
                                     </a>
                                     {projectList[key].siteLink && (
-                                    <a href={projectList[key].siteLink} target="_blank" rel="noreferrer" className='gitSiteLink'>Site</a>)}
+                                        <a href={projectList[key].siteLink} target="_blank" rel="noreferrer" className='gitSiteLink'>Site</a>)}
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div >
-        </>
+        </div>
     )
 }
