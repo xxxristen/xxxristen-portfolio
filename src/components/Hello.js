@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Hello = () => {
     return (
-        <div className="mb-4 container pt-sm-5 pt-xs-3 hidden" id="hello">
+        <div className="mb-4 container pt-sm-5 pt-xs-3" id="hello">
             <span className="fw-bold hello">Hello.</span>
             <span className="introName mt-0 text-break">I&#39;m Christen.</span>
             <p className="mt-2">

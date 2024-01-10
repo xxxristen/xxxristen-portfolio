@@ -4,7 +4,7 @@ import { GitHubSVG } from './GitHubSVG'
 
 export const Contact = () => {
     return (
-        <div className='hidden' id='contact'>
+        <div id='contact'>
             <div className="projectHeaderTitle fs-5 text-center text-uppercase">
             Get in touch
         </div>
