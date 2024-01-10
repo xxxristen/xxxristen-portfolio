@@ -2,7 +2,7 @@ import React from 'react'
 import WebrewSS from "../images/projects/capstone-webrew.png";
 import Jammming from "../images/projects/jammming.png";
 import ToDo from "../images/projects/to-do.png";
-import StudentGen from "../images/projects/studentGen.png";
+import StudentGen from "../images/projects/studentgen.png";
 import FindYourHat from "../images/projects/findyourhat.png";
 import Colmar from "../images/projects/colmar.png";
 
