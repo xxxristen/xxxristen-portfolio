@@ -4,9 +4,9 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 const navbarlinks = { "Hello": "#hello", "Projects": "#projects", "Contact": "#contact" }
 export const NavBar = () => {
     return (
-        <Navbar expand="sm" id="navbarX">
+        <Navbar expand="sm" id="navbarX" className='navbar-dark'>
             <Container fluid>
-                <Navbar.Toggle aria-controls="navbarNav" />
+                <Navbar.Toggle aria-controls="navbarNav"/>
                 <Navbar.Collapse id="navbarNav" className="flex justify-content-end">
                     <Nav>
                         {Object.keys(navbarlinks).map(key => (

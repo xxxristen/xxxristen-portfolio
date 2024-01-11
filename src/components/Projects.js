@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import WebrewSS from "../images/projects/capstone-webrew.png";
 import Jammming from "../images/projects/jammming.png";
 import ToDo from "../images/projects/to-do.png";
@@ -90,8 +92,7 @@ const projectList = [
         projectTitle: "Responsive webpage",
         projectSS: Colmar,
         projectDescription: (<><p>
-            Landing page of a fictional school, which was created
-            according to the design documentation provided.
+            Created the landing page of a fictional school according to design documentation provided.
         </p ></>)
         ,
         gitHubLink: "https://github.com/xxxristen/web-assessment",
@@ -100,16 +101,44 @@ const projectList = [
 ];
 
 export const Projects = () => {
+    const control = useAnimation()
+    const [ref, inView] = useInView()
+
+    React.useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        }
+    }, [control, inView])
+
+    const gridContainer = {
+        hidden: { opacity: 0, y: 100 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                when: "beforeChildren",
+                duration: 0.5,
+                staggerChildren: 0.5
+            }
+        }
+    }
+
+    const gridChildren = {
+        hidden: { opacity: 0, y: 100 },
+        show: { opacity: 1, y: 0 }
+    }
+
     return (
         <div id='projects'>
-            <div className="projectHeaderTitle fs-5 text-center text-uppercase">
-                Some of the things that I&#39;ve built
-            </div>
-            <div className="fw-bold bar"></div>
+            <motion.div ref={ref} initial={{ opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
+                <div className="projectHeaderTitle fs-5 text-center text-uppercase">
+                    Some of the things that I&#39;ve built</div>
+                <div className="fw-bold bar"></div>
+            </motion.div>
             <div className="container mb-4" id="gridMainContainer">
-                <div className="grid-container">
+                <motion.div ref={ref} variants={gridContainer} initial="hidden" animate="show" className="grid-container">
                     {Object.keys(projectList).map(key => (
-                        <div className="grid" key={key}>
+                        <motion.div variants={gridChildren} className="grid" key={key}>
                             <div className="item">
                                 <img
                                     src={projectList[key].projectSS}
@@ -139,9 +168,9 @@ export const Projects = () => {
                                         <a href={projectList[key].siteLink} target="_blank" rel="noreferrer" className='gitSiteLink'>Site</a>)}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div >
         </div>
     )
