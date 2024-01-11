@@ -3,8 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `xristen-portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `xxxristen-portfolio`,
+    siteUrl: `https://xxxristen-portfolio.vercel.app/`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
