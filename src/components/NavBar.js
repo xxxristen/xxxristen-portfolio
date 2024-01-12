@@ -1,9 +1,14 @@
 import React from 'react'
 import { Nav, Navbar, Container } from "react-bootstrap";
+import { motion } from 'framer-motion';
 
 const navbarlinks = { "Hello": "#hello", "Projects": "#projects", "Contact": "#contact" }
 export const NavBar = () => {
     return (
+        <motion.div initial="hidden" animate="show" viewport={{ once: true }} variants={{
+            show: { opacity: 1, transition: { duration: 1 } },
+            hidden: { opacity: 0 }
+        }}>
         <Navbar expand="sm" id="navbarX" className='navbar-dark'>
             <Container fluid>
                 <Navbar.Toggle aria-controls="navbarNav"/>
@@ -20,5 +25,6 @@ export const NavBar = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        </motion.div>
     )
 }
