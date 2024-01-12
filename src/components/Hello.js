@@ -25,8 +25,8 @@ export const Hello = () => {
     }
     return (
         <motion.div ref={ref} variants={helloVariant} initial="hidden" animate="show" className="mb-4 container pt-sm-5 pt-xs-3" id="hello">
-            <span className="fw-bold hello">Hello.</span>
-            <span className="introName mt-0 text-break">I&#39;m Christen.</span>
+            <div className="fw-bold hello d-sm-inline d-xs-block">Hello.</div>
+            <div className="introName mt-0 text-break d-sm-inline d-xs-block">I&#39;m Christen.</div>
             <p className="mt-2">
                 An unintentional DIY-er, I&#39;m curious and like to discover how
                 things work. Often regarded as an detail-oriented individual and also

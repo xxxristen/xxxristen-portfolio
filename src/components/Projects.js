@@ -125,20 +125,23 @@ export const Projects = () => {
 
     const gridChildren = {
         hidden: { opacity: 0, y: 100 },
-        show: { opacity: 1, y: 0 }
+        show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
     }
 
     return (
         <div id='projects'>
-            <motion.div ref={ref} initial={{ opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
+            <motion.div ref={ref} initial="hidden" whileInView="show" viewport={{ once: true }} variants={{
+                show: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+                hidden: { opacity: 0, x: 100 }
+            }}>
                 <div className="projectHeaderTitle fs-5 text-center text-uppercase">
                     Some of the things that I&#39;ve built</div>
                 <div className="fw-bold bar"></div>
             </motion.div>
             <div className="container mb-4" id="gridMainContainer">
-                <motion.div ref={ref} variants={gridContainer} initial="hidden" animate="show" className="grid-container">
+                <motion.div ref={ref} variants={gridContainer} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid-container">
                     {Object.keys(projectList).map(key => (
-                        <motion.div variants={gridChildren} className="grid" key={key}>
+                        <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }}  className="grid" key={key}>
                             <div className="item">
                                 <img
                                     src={projectList[key].projectSS}

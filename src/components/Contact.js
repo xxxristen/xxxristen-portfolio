@@ -14,7 +14,7 @@ export const Contact = () => {
         }
     }, [control, inView])
 
-    const boxVariant = {
+    const contactVariant = {
         hidden: { opacity: 0, scale: 0 },
         show: {
             opacity: 1, scale: 1, transition: {
@@ -25,7 +25,7 @@ export const Contact = () => {
 
     return (
         <div id='contact'>
-            <motion.div ref={ref} variants={boxVariant} initial="hidden" animate="show">
+            <motion.div ref={ref} variants={contactVariant} initial="hidden" whileInView="show" viewport={{ once: true }} >
                 <div className="projectHeaderTitle fs-5 text-center text-uppercase">
                     Get in touch
                 </div>
@@ -33,7 +33,7 @@ export const Contact = () => {
                 <div>
                     <div className="mb-4 container mt-4 text-center">
                         <p>Send me an email to connect.</p>
-                        <p>I&#39;m available to discuss any new opportunities, be it employment or even projects to learn together.</p>
+                        <p>I&#39;m available to discuss any new opportunities, be it employment or even projects to learn together, so get in touch with me.</p>
                     </div>
                     <div className="text-center mt-5 mb-5">
                         <a href="mailto:lim.christen@gmail.com?subject=Say Hello">
