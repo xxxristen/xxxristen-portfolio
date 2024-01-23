@@ -27,7 +27,7 @@ const projectList = [
             <p>Also implemented username / password authentication.</p></>
         ),
         gitHubLink: "https://github.com/xxxristen/capstone-webrew",
-        siteLink: "https://myownwebrew.up.railway.app/"
+        siteLink: "https://xx-capstone-webrew.onrender.com/"
     },
     {
         projectTitle: "React - Spotify playlist app",
