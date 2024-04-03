@@ -24,7 +24,7 @@ const projectList = [
                     <strong>Frontend:</strong> JavaScript + CSS + HTML
                 </li>
             </ul>
-            <p>Also implemented username / password authentication.</p></>
+            <p>Also implemented username / password authentication using Spring Security.</p></>
         ),
         gitHubLink: "https://github.com/xxxristen/capstone-webrew",
         siteLink: "https://xx-capstone-webrew.onrender.com/"
