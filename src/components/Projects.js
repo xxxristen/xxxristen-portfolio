@@ -15,7 +15,7 @@ const projectList = [
         projectDescription: (<>
             <ul className="mt-3">
                 <li>
-                    <strong>Persistence:</strong> MySQL database
+                    <strong>Persistence:</strong> Postgres database (MySQL when site was hosted on railway)
                 </li>
                 <li>
                     <strong>Backend:</strong> REST API with Java and Spring Boot
