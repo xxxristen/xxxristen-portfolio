@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import WebrewSS from "../images/projects/capstone-webrew.png";
 import Jammming from "../images/projects/jammming.png";
 import ToDo from "../images/projects/to-do.png";
@@ -160,15 +161,15 @@ export const Projects = () => {
                                     </div>
                                 )}
                                 <div>
-                                    <a href={projectList[key].gitHubLink}
+                                    <OutboundLink href={projectList[key].gitHubLink}
                                         target="_blank"
                                         rel="noreferrer"
                                         className='gitSiteLink'
                                     >
                                         Code
-                                    </a>
+                                    </OutboundLink>
                                     {projectList[key].siteLink && (
-                                        <a href={projectList[key].siteLink} target="_blank" rel="noreferrer" className='gitSiteLink'>Site</a>)}
+                                        <OutboundLink href={projectList[key].siteLink} target="_blank" rel="noreferrer" className='gitSiteLink'>Site</OutboundLink>)}
                                 </div>
                             </div>
                         </motion.div>
