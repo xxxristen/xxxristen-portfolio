@@ -25,7 +25,8 @@ const projectList = [
                     <strong>Frontend:</strong> JavaScript + CSS + HTML
                 </li>
             </ul>
-            <p>Also implemented username / password authentication using Spring Security.</p></>
+            <p>Also implemented username / password authentication using Spring Security.</p>
+            <p>Please reload and wait for site to load, as site is hosted on free tier and it spins down when there's no inbound traffic for the past 15 mins.</p></>
         ),
         gitHubLink: "https://github.com/xxxristen/capstone-webrew",
         siteLink: "https://xx-capstone-webrew.onrender.com/"
@@ -164,12 +165,19 @@ export const Projects = () => {
                                     <OutboundLink href={projectList[key].gitHubLink}
                                         target="_blank"
                                         rel="noreferrer"
+                                        eventCategory="Project Clicks" 
+                                        eventAction={`Clicked ${projectList[key].projectTitle} GitHub`}
                                         className='gitSiteLink'
                                     >
                                         Code
                                     </OutboundLink>
                                     {projectList[key].siteLink && (
-                                        <OutboundLink href={projectList[key].siteLink} target="_blank" rel="noreferrer" className='gitSiteLink'>Site</OutboundLink>)}
+                                        <OutboundLink href={projectList[key].siteLink}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        eventCategory="Project Clicks" 
+                                        eventAction={`Clicked ${projectList[key].projectTitle} sitelink`}
+                                        className='gitSiteLink'>Site</OutboundLink>)}
                                 </div>
                             </div>
                         </motion.div>
