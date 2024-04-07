@@ -165,8 +165,9 @@ export const Projects = () => {
                                     <OutboundLink href={projectList[key].gitHubLink}
                                         target="_blank"
                                         rel="noreferrer"
-                                        eventCategory="Project Clicks" 
-                                        eventAction={`Clicked ${projectList[key].projectTitle} GitHub`}
+                                        eventCategory="project GH clicks" 
+                                        eventAction="click"
+                                        eventLabel={`${projectList[key].projectTitle} GitHub`}
                                         className='gitSiteLink'
                                     >
                                         Code
@@ -175,7 +176,7 @@ export const Projects = () => {
                                         <OutboundLink href={projectList[key].siteLink}
                                         target="_blank"
                                         rel="noreferrer"
-                                        eventCategory="project clicks" 
+                                        eventCategory="project site clicks" 
                                         eventAction="click"
                                         eventLabel={`${projectList[key].projectTitle} sitelink`}
                                         className='gitSiteLink'>Site</OutboundLink>)}
