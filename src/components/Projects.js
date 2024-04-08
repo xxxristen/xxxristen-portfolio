@@ -164,10 +164,15 @@ export const Projects = () => {
                                 <div>
                                     <OutboundLink href={projectList[key].gitHubLink}
                                         target="_blank"
-                                        rel="noreferrer"
-                                        eventCategory="project GH clicks" 
-                                        eventAction="click"
-                                        eventLabel={`${projectList[key].projectTitle} GitHub`}
+                                        rel="noreferrer" 
+                                        onClick={() => {
+                                            if (typeof window !== "undefined") {
+                                              window.gtag("event", "click", {
+                                                event_category: "GH clicks",
+                                                event_label: `${projectList[key].projectTitle} + ' GitHub'`,
+                                              });
+                                            }
+                                          }}
                                         className='gitSiteLink'
                                     >
                                         Code
@@ -176,9 +181,14 @@ export const Projects = () => {
                                         <OutboundLink href={projectList[key].siteLink}
                                         target="_blank"
                                         rel="noreferrer"
-                                        eventCategory="project site clicks" 
-                                        eventAction="click"
-                                        eventLabel={`${projectList[key].projectTitle} sitelink`}
+                                        onClick={() => {
+                                            if (typeof window !== "undefined") {
+                                              window.gtag("event", "click", {
+                                                event_category: "project site clicks",
+                                                event_label: `${projectList[key].projectTitle} + ' site'`,
+                                              });
+                                            }
+                                          }}
                                         className='gitSiteLink'>Site</OutboundLink>)}
                                 </div>
                             </div>
