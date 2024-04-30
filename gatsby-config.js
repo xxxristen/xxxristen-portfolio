@@ -67,7 +67,7 @@ module.exports = {
             anonymize_ip: true,
             cookie_expires: 0,
           },
-          // This object is used for configuration specific to gtag plugin
+          // This object is used for configuration specific to the gtag plugin
           pluginConfig: {
             // Puts tracking script in the head instead of the body
             head: false,
