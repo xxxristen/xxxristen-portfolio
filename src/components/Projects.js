@@ -169,7 +169,7 @@ export const Projects = () => {
                                             if (typeof window !== "undefined") {
                                               window.gtag("event", "click", {
                                                 event_category: "GH clicks",
-                                                event_label: `${projectList[key].projectTitle} + ' GitHub'`,
+                                                event_label: `${projectList[key].projectTitle} - GitHub`,
                                               });
                                             }
                                           }}
@@ -185,7 +185,7 @@ export const Projects = () => {
                                             if (typeof window !== "undefined") {
                                               window.gtag("event", "click", {
                                                 event_category: "project site clicks",
-                                                event_label: `${projectList[key].projectTitle} + ' site'`,
+                                                event_label: `${projectList[key].projectTitle} - site`,
                                               });
                                             }
                                           }}
