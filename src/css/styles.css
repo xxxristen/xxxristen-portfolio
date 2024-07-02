@@ -85,7 +85,7 @@ a:hover {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
 }
@@ -122,6 +122,14 @@ a:hover {
     background-color: #088471;
     width: 25rem;
     overflow: hidden;
+}
+
+[data-rmiz-modal-overlay="visible"] {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-rmiz-modal-content] img {
+    max-height: unset !important;
 }
 
 .projectTitle {

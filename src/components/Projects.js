@@ -2,12 +2,14 @@ import React from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import WebrewSS from "../images/projects/capstone-webrew.png";
-import Jammming from "../images/projects/jammming.png";
-import ToDo from "../images/projects/to-do.png";
-import StudentGen from "../images/projects/studentgen.png";
-import FindYourHat from "../images/projects/findyourhat.png";
-import Colmar from "../images/projects/colmar.png";
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+import WebrewSS from "../images/projects/capstone-webrew.gif";
+import Jammming from "../images/projects/jammming.gif";
+import ToDo from "../images/projects/to-do.gif";
+import StudentGen from "../images/projects/studentgen.gif";
+import FindYourHat from "../images/projects/findyourhat.gif";
+import Colmar from "../images/projects/colmar.gif";
 
 const projectList = [
     {
@@ -39,9 +41,10 @@ const projectList = [
             account.
         </p>
             <p>
-                While the page is accessible, the Spotify web api app is in
-                development mode hence only whitelisted Spotify users can use
-                the app.</p></>)
+                <strong>Note:</strong> While the page is accessible, the Spotify web api app is in 
+                <em>development mode</em> hence only whitelisted Spotify users can use
+                the app.</p>
+                <p><a href="#contact">Get in touch with me</a> if you wish to try out the app.</p></>)
         ,
         gitHubLink: "https://github.com/xxxristen/react-capstone",
         siteLink: "https://xxxristen-react.vercel.app/"
@@ -145,12 +148,13 @@ export const Projects = () => {
                     {Object.keys(projectList).map(key => (
                         <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }}  className="grid" key={key}>
                             <div className="item">
-                                <img
+                                <Zoom><img
                                     src={projectList[key].projectSS}
                                     alt={projectList[key].projectTitle}
                                     className="img-fluid"
                                     aria-label="hidden"
                                 />
+                                </Zoom>
                             </div>
                             <div className="item projectDescription">
                                 <p className="projectTitle">

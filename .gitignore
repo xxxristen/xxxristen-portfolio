@@ -3,3 +3,6 @@ node_modules/
 public
 src/components/LaunchGame.js
 src/components/LaunchModal.js
+.env
+.idea
+src/components/game
