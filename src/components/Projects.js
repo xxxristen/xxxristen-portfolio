@@ -4,17 +4,17 @@ import { useInView } from 'react-intersection-observer';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import WebrewSS from "../images/projects/capstone-webrew.gif";
-import Jammming from "../images/projects/jammming.gif";
-import ToDo from "../images/projects/to-do.gif";
-import StudentGen from "../images/projects/studentgen.gif";
-import FindYourHat from "../images/projects/findyourhat.gif";
-import Colmar from "../images/projects/colmar.gif";
+import Webrew from "../images/projects/capstone-webrew.webp";
+import Jammming from "../images/projects/jammming.webp";
+import ToDo from "../images/projects/to-do.webp";
+import StudentGen from "../images/projects/studentgen.webp";
+import FindYourHat from "../images/projects/findyourhat.webp";
+import Colmar from "../images/projects/colmar.webp";
 
 const projectList = [
     {
         projectTitle: "Capstone project - E-commerce website",
-        projectSS: WebrewSS,
+        projectSS: Webrew,
         projectDescription: (<>
             <ul className="mt-3">
                 <li>
@@ -28,7 +28,7 @@ const projectList = [
                 </li>
             </ul>
             <p>Also implemented username / password authentication using Spring Security.</p>
-            <p>Please reload and wait for site to load, as site is hosted on free tier and it spins down when there's no inbound traffic for the past 15 mins.</p></>
+            <p>As the site spins down when there's no inbound traffic in the past 15 minutes, please reload and wait for site to load.</p></>
         ),
         gitHubLink: "https://github.com/xxxristen/capstone-webrew",
         siteLink: "https://xx-capstone-webrew.onrender.com/"
@@ -37,7 +37,7 @@ const projectList = [
         projectTitle: "React - Spotify playlist app",
         projectSS: Jammming,
         projectDescription: (<><p>
-            Allows users to create custom playlist and export to Spotify
+            Allows user to create custom playlist and export to Spotify
             account.
         </p>
             <p>
@@ -97,8 +97,8 @@ const projectList = [
         projectTitle: "Responsive webpage",
         projectSS: Colmar,
         projectDescription: (<><p>
-            Created the landing page of a fictional school according to design documentation provided.
-        </p ></>)
+            Created the landing page of a fictional school according to <a href="https://content.codecademy.com/courses/freelance-1/capstone-2/colmar-academy-spec.png" target="_blank">design documentation</a> provided.
+            </p ></>)
         ,
         gitHubLink: "https://github.com/xxxristen/web-assessment",
         siteLink: "https://xxxristen-web-assessment.vercel.app/"
