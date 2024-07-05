@@ -41,8 +41,7 @@ const projectList = [
             account.
         </p>
             <p>
-                <strong>Note:</strong> While the page is accessible, the Spotify web api app is in 
-                <em>development mode</em> hence only whitelisted Spotify users can use
+                <strong>Note:</strong> While the page is accessible, the Spotify web api app is in <em>development mode</em> hence only whitelisted Spotify users can use
                 the app.</p>
                 <p><a href="#contact">Get in touch with me</a> if you wish to try out the app.</p></>)
         ,
@@ -97,7 +96,7 @@ const projectList = [
         projectTitle: "Responsive webpage",
         projectSS: Colmar,
         projectDescription: (<><p>
-            Created the landing page of a fictional school according to <a href="https://content.codecademy.com/courses/freelance-1/capstone-2/colmar-academy-spec.png" target="_blank">design documentation</a> provided.
+            Created the landing page of a fictional school according to <a href="https://content.codecademy.com/courses/freelance-1/capstone-2/colmar-academy-spec.png" target="_blank" rel="noreferrer">design documentation</a> provided.
             </p ></>)
         ,
         gitHubLink: "https://github.com/xxxristen/web-assessment",
@@ -148,7 +147,9 @@ export const Projects = () => {
                     {Object.keys(projectList).map(key => (
                         <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }}  className="grid" key={key}>
                             <div className="item">
-                                <Zoom><img
+                                <Zoom>
+                                    <button aria-label="Maximise image" data-rmiz-btn-zoom type="button"></button>
+                                    <img
                                     src={projectList[key].projectSS}
                                     alt={projectList[key].projectTitle}
                                     className="img-fluid"

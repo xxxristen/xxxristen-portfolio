@@ -124,6 +124,24 @@ a:hover {
     overflow: hidden;
 }
 
+[data-rmiz-btn-zoom],
+[data-rmiz-btn-unzoom] {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-rmiz-btn-zoom]:hover svg,
+[data-rmiz-btn-unzoom]:hover svg {
+    fill: #ffa500 !important;
+}
+
+[data-rmiz-btn-zoom] {
+    clip: auto !important;
+    clip-path: none !important;
+    height: 40px !important;
+    width: 40px !important;
+    pointer-events: auto !important;
+}
+
 [data-rmiz-modal-overlay="visible"] {
     background-color: rgba(0, 0, 0, 0.6) !important;
 }
@@ -246,6 +264,7 @@ a:hover {
     .nav-link.active {
         color: #088471 !important;
     }
+
     .nav-link:focus {
         color: #ffa500 !important;
     }
