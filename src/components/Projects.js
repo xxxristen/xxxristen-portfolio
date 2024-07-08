@@ -9,7 +9,10 @@ import Jammming from "../images/projects/jammming.webp";
 import ToDo from "../images/projects/to-do.webp";
 import StudentGen from "../images/projects/studentgen.webp";
 import FindYourHat from "../images/projects/findyourhat.webp";
+import CCChecker from "../images/projects/credit-card-checker.webp";
+import CCSpecs from "../documents/cc-credit-checker-specs.pdf";
 import Colmar from "../images/projects/colmar.webp";
+
 
 const projectList = [
     {
@@ -31,7 +34,8 @@ const projectList = [
             <p>As the site spins down when there's no inbound traffic in the past 15 minutes, please reload and wait for site to load.</p></>
         ),
         gitHubLink: "https://github.com/xxxristen/capstone-webrew",
-        siteLink: "https://xx-capstone-webrew.onrender.com/"
+        siteLink: "https://xx-capstone-webrew.onrender.com/",
+        playGround: ""
     },
     {
         projectTitle: "React - Spotify playlist app",
@@ -41,12 +45,13 @@ const projectList = [
             account.
         </p>
             <p>
-                <strong>Note:</strong> While the page is accessible, the Spotify web api app is in <em>development mode</em> hence only whitelisted Spotify users can use
-                the app.</p>
-                <p><a href="#contact">Get in touch with me</a> if you wish to try out the app.</p></>)
+                <strong>Note:</strong> While the page is accessible, the Spotify web api app is in <em>development mode</em> hence only whitelisted Spotify users can use the app.</p>
+            <p><a href="#contact">Get in touch with me</a> if you wish to try out the app.</p></>
+        )
         ,
         gitHubLink: "https://github.com/xxxristen/react-capstone",
-        siteLink: "https://xxxristen-react.vercel.app/"
+        siteLink: "https://xxxristen-react.vercel.app/",
+        playGround: ""
     },
     {
         projectTitle: "Spring Boot MVC App - To do list",
@@ -60,10 +65,11 @@ const projectList = [
                 <li>
                     <strong>Exception handling and data validation</strong>
                 </li>
-            </ul></>)
-        ,
+            </ul></>
+        ),
         gitHubLink: "https://github.com/xxxristen/springboot-mvc",
-        siteLink: ""
+        siteLink: "",
+        playGround: ""
     },
     {
         projectTitle: "Course enrolment program",
@@ -77,30 +83,50 @@ const projectList = [
                 <li>Enrol student into course</li>
                 <li>Grade student</li>
                 <li>Show students summary</li>
-            </ul></>)
-        ,
+            </ul></>
+        ),
         gitHubLink: "https://github.com/xxxristen/StudentGen",
-        siteLink: ""
+        siteLink: "",
+        playGround: ""
     },
     {
         projectTitle: "Find your hat",
         projectSS: FindYourHat,
         projectDescription: (<><p>
             An interactive game created with JavaScript, and playable in terminal.
-        </p ></>)
-        ,
+        </p ></>
+        ),
         gitHubLink: "https://github.com/xxxristen/find-your-hat",
-        siteLink: ""
+        siteLink: "",
+        playGround: ""
+    },
+    {
+        projectTitle: "Credit card checker",
+        projectSS: CCChecker,
+        projectDescription: (<><p>
+            Credit card number checker built using JavaScript and usable in terminal. Include functions such as:</p>
+            <ul>
+                <li>Validate card numbers using Luhn algorithm</li>
+                <li>Find invalid numbers</li>
+                <li>Fix invalid numbers</li>
+            </ul>
+            <p>Refer to the <a href={CCSpecs} target="_blank" rel="noreferrer">specs of the challenge project</a>.
+            </p ></>
+        ),
+        gitHubLink: "https://gist.github.com/xxxristen/ef696e269911fec01c210d991f9edbf7",
+        siteLink: "",
+        playGround: "https://codepen.io/xristen/pen/MWMWvmJ?editors=1012"
     },
     {
         projectTitle: "Responsive webpage",
         projectSS: Colmar,
         projectDescription: (<><p>
             Created the landing page of a fictional school according to <a href="https://content.codecademy.com/courses/freelance-1/capstone-2/colmar-academy-spec.png" target="_blank" rel="noreferrer">design documentation</a> provided.
-            </p ></>)
-        ,
+        </p ></>
+        ),
         gitHubLink: "https://github.com/xxxristen/web-assessment",
-        siteLink: "https://xxxristen-web-assessment.vercel.app/"
+        siteLink: "https://xxxristen-web-assessment.vercel.app/",
+        playGround: ""
     }
 ];
 
@@ -145,16 +171,16 @@ export const Projects = () => {
             <div className="container mb-4" id="gridMainContainer">
                 <motion.div ref={ref} variants={gridContainer} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid-container">
                     {Object.keys(projectList).map(key => (
-                        <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }}  className="grid" key={key}>
+                        <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid" key={key}>
                             <div className="item">
                                 <Zoom>
                                     <button aria-label="Maximise image" data-rmiz-btn-zoom type="button"></button>
                                     <img
-                                    src={projectList[key].projectSS}
-                                    alt={projectList[key].projectTitle}
-                                    className="img-fluid"
-                                    aria-label="hidden"
-                                />
+                                        src={projectList[key].projectSS}
+                                        alt={projectList[key].projectTitle}
+                                        className="img-fluid"
+                                        aria-label="hidden"
+                                    />
                                 </Zoom>
                             </div>
                             <div className="item projectDescription">
@@ -169,32 +195,45 @@ export const Projects = () => {
                                 <div>
                                     <OutboundLink href={projectList[key].gitHubLink}
                                         target="_blank"
-                                        rel="noreferrer" 
+                                        rel="noreferrer"
                                         onClick={() => {
                                             if (typeof window !== "undefined") {
-                                              window.gtag("event", "click", {
-                                                event_category: "GH clicks",
-                                                event_label: `${projectList[key].projectTitle} - GitHub`,
-                                              });
+                                                window.gtag("event", "click", {
+                                                    event_category: "GH clicks",
+                                                    event_label: `${projectList[key].projectTitle} - GitHub`,
+                                                });
                                             }
-                                          }}
+                                        }}
                                         className='gitSiteLink'
                                     >
                                         Code
                                     </OutboundLink>
                                     {projectList[key].siteLink && (
                                         <OutboundLink href={projectList[key].siteLink}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        onClick={() => {
-                                            if (typeof window !== "undefined") {
-                                              window.gtag("event", "click", {
-                                                event_category: "project site clicks",
-                                                event_label: `${projectList[key].projectTitle} - site`,
-                                              });
-                                            }
-                                          }}
-                                        className='gitSiteLink'>Site</OutboundLink>)}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            onClick={() => {
+                                                if (typeof window !== "undefined") {
+                                                    window.gtag("event", "click", {
+                                                        event_category: "project site clicks",
+                                                        event_label: `${projectList[key].projectTitle} - site`,
+                                                    });
+                                                }
+                                            }}
+                                            className='gitSiteLink'>Site</OutboundLink>)}
+                                    {projectList[key].playGround && (
+                                        <OutboundLink href={projectList[key].playGround}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            onClick={() => {
+                                                if (typeof window !== "undefined") {
+                                                    window.gtag("event", "click", {
+                                                        event_category: "playground clicks",
+                                                        event_label: `${projectList[key].projectTitle} - playground`,
+                                                    });
+                                                }
+                                            }}
+                                            className='gitSiteLink'>Try it!</OutboundLink>)}
                                 </div>
                             </div>
                         </motion.div>
