@@ -18,10 +18,11 @@ img {
 
 a {
     text-decoration: none;
+    color: #088471;
 }
 
 a:hover {
-    color: #088471;
+    color: #09dd7a;
 }
 
 #navbarX {

@@ -9,7 +9,7 @@ import Jammming from "../images/projects/jammming.webp";
 import ToDo from "../images/projects/to-do.webp";
 import StudentGen from "../images/projects/studentgen.webp";
 import FindYourHat from "../images/projects/findyourhat.webp";
-import CCChecker from "../images/projects/credit-card-checker.webp";
+import CCChecker from "../images/projects/credit-card-checker.webp"
 import CCSpecs from "../documents/cc-credit-checker-specs.pdf";
 import Colmar from "../images/projects/colmar.webp";
 
@@ -72,7 +72,7 @@ const projectList = [
         playGround: ""
     },
     {
-        projectTitle: "Course enrolment program",
+        projectTitle: "Java - Course enrolment program",
         projectSS: StudentGen,
         projectDescription: (<><p>
             A course enrolment program using Java and Object Oriented
@@ -90,18 +90,22 @@ const projectList = [
         playGround: ""
     },
     {
-        projectTitle: "Find your hat",
+        projectTitle: "JavaScipt - Find your hat",
         projectSS: FindYourHat,
         projectDescription: (<><p>
             An interactive game created with JavaScript, and playable in terminal.
-        </p ></>
+        </p >
+            <ul>
+                <li><b>Random map generator:</b> Prompts and creates map based on user's input.</li>
+                <li><b>Movement checks:</b> Detects if the user "finds" the hat, "falls" into a hole, or "leaves" the map.</li>
+            </ul></>
         ),
         gitHubLink: "https://github.com/xxxristen/find-your-hat",
         siteLink: "",
         playGround: ""
     },
     {
-        projectTitle: "Credit card checker",
+        projectTitle: "JavaScript - Credit card number checker",
         projectSS: CCChecker,
         projectDescription: (<><p>
             Credit card number checker built using JavaScript and usable in terminal. Include functions such as:</p>
@@ -118,11 +122,12 @@ const projectList = [
         playGround: "https://codepen.io/xristen/pen/MWMWvmJ?editors=1012"
     },
     {
-        projectTitle: "Responsive webpage",
+        projectTitle: "CSS - Responsive webpage",
         projectSS: Colmar,
         projectDescription: (<><p>
-            Created the landing page of a fictional school according to <a href="https://content.codecademy.com/courses/freelance-1/capstone-2/colmar-academy-spec.png" target="_blank" rel="noreferrer">design documentation</a> provided.
-        </p ></>
+            Landing page of a fictional school, with page styling done using CSS which allows responsive layout for optimal user experience on any device.</p>
+            <p>Refer to the <a href="https://content.codecademy.com/courses/freelance-1/capstone-2/colmar-academy-spec.png" target="_blank" rel="noreferrer">design documentation</a>.
+            </p></>
         ),
         gitHubLink: "https://github.com/xxxristen/web-assessment",
         siteLink: "https://xxxristen-web-assessment.vercel.app/",
@@ -233,7 +238,7 @@ export const Projects = () => {
                                                     });
                                                 }
                                             }}
-                                            className='gitSiteLink'>Try it!</OutboundLink>)}
+                                            className='gitSiteLink'>Try it</OutboundLink>)}
                                 </div>
                             </div>
                         </motion.div>
