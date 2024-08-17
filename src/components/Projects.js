@@ -41,11 +41,10 @@ const projectList = [
         projectTitle: "React - Spotify playlist app",
         projectSS: Jammming,
         projectDescription: (<><p>
-            Allows user to create custom playlist and export to Spotify
-            account.
+            React web app that allows user to search for songs and create custom playlist and export to Spotify account.
         </p>
             <p>
-                <strong>Note:</strong> While the page is accessible, the Spotify web api app is in <em>development mode</em> hence only whitelisted Spotify users can use the app.</p>
+                <strong>Note:</strong> While the page is accessible, the Spotify web api app is in <a href="https://developer.spotify.com/documentation/web-api/concepts/quota-modes" target='_blank' rel="noreferrer"><em>development mode</em></a> hence only whitelisted Spotify users can use the app.</p>
             <p><a href="#contact">Get in touch with me</a> if you wish to try out the app.</p></>
         )
         ,
