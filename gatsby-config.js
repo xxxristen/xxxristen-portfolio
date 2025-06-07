@@ -9,7 +9,7 @@ module.exports = {
   plugins:
     ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp",
       {
-        resolve: 'gatsby-source-filesystem',
+        resolve: `gatsby-source-filesystem`,
         options: {
           "name": "images",
           "path": "./src/images/"
@@ -29,7 +29,7 @@ module.exports = {
         },
       },
       {
-        resolve: "gatsby-omni-font-loader",
+        resolve: `gatsby-omni-font-loader`,
         options: {
           mode: "async",
 

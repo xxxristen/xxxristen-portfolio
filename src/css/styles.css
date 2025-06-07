@@ -124,7 +124,6 @@ a:hover {
     width: 25rem;
     overflow: hidden;
 }
-
 [data-rmiz-btn-zoom],
 [data-rmiz-btn-unzoom] {
     background-color: rgba(0, 0, 0, 0.4) !important;
@@ -135,16 +134,9 @@ a:hover {
     fill: #ffa500 !important;
 }
 
-[data-rmiz-btn-zoom] {
-    clip: auto !important;
-    clip-path: none !important;
-    height: 40px !important;
-    width: 40px !important;
-    pointer-events: auto !important;
-}
-
+/* background color when image is zoomed in */
 [data-rmiz-modal-overlay="visible"] {
-    background-color: rgba(0, 0, 0, 0.6) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 [data-rmiz-modal-content] img {

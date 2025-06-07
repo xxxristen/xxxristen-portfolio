@@ -15,11 +15,11 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "axios": "^1.7.4",
-    "bootstrap": "^5.3.3",
+    "axios": "^1.9.0",
+    "bootstrap": "^5.3.6",
     "dom-parser": "^1.1.5",
-    "framer-motion": "^11.0.24",
-    "gatsby": "^5.14.2",
+    "framer-motion": "^12.16.0",
+    "gatsby": "^5.14.4",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-google-gtag": "^5.14.0",
     "gatsby-plugin-google-tagmanager": "^5.14.0",
@@ -32,15 +32,15 @@
     "gatsby-transformer-remark": "^6.14.0",
     "gatsby-transformer-sharp": "^5.14.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.2",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-intersection-observer": "^9.8.1",
-    "react-medium-image-zoom": "^5.2.5",
-    "webpack": "^5.91.0",
-    "webpack-dev-middleware": ">=5.3.4"
+    "react-intersection-observer": "^9.16.0",
+    "react-medium-image-zoom": "^5.2.14",
+    "webpack": "^5.99.9",
+    "webpack-dev-middleware": "7.4.2"
   },
   "optionalDependencies": {
-    "@parcel/watcher-linux-x64-glibc": "^2.4.2-alpha.0"
+    "@parcel/watcher-linux-x64-glibc": "^2.5.1"
   }
 }

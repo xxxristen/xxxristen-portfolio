@@ -178,7 +178,6 @@ export const Projects = () => {
                         <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid" key={key}>
                             <div className="item">
                                 <Zoom>
-                                    <button aria-label="Maximise image" data-rmiz-btn-zoom type="button"></button>
                                     <img
                                         src={projectList[key].projectSS}
                                         alt={projectList[key].projectTitle}
