@@ -137,7 +137,6 @@ const projectList = [
 export const Projects = () => {
     const control = useAnimation()
     const [ref, inView] = useInView()
-
     React.useEffect(() => {
         if (inView) {
             control.start("visible");
@@ -162,6 +161,24 @@ export const Projects = () => {
         show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
     }
 
+    const handleLinkClick = (siteType, linkKey, href) => {
+        if (typeof window !== 'undefined' && window.dataLayer) {
+            const eventName = "project_click";
+            const category = "Navigation";
+            const action = "Project Click";
+            const label = `${siteType} - ${linkKey}`;
+
+          window.dataLayer.push({
+                event: eventName,
+                event_category: category,
+                event_action: action,
+                event_label: label,
+                link_href: href,
+                link_text: linkKey,
+              });
+            }
+          };
+
     return (
         <div id='projects'>
             <motion.div ref={ref} initial="hidden" whileInView="show" viewport={{ once: true }} variants={{
@@ -175,72 +192,51 @@ export const Projects = () => {
             <div className="container mb-4" id="gridMainContainer">
                 <motion.div ref={ref} variants={gridContainer} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid-container">
                     {Object.keys(projectList).map(key => (
-                        <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid" key={key}>
-                            <div className="item">
-                                <Zoom>
-                                    <img
-                                        src={projectList[key].projectSS}
-                                        alt={projectList[key].projectTitle}
-                                        className="img-fluid"
-                                        aria-label="hidden"
-                                    />
-                                </Zoom>
-                            </div>
-                            <div className="item projectDescription">
-                                <p className="projectTitle">
-                                    {projectList[key].projectTitle}
-                                </p>
-                                {projectList[key].projectDescription && (
-                                    <div>
-                                        {projectList[key].projectDescription}
-                                    </div>
-                                )}
-                                <div>
-                                    <OutboundLink href={projectList[key].gitHubLink}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        onClick={() => {
-                                            if (typeof window !== "undefined") {
-                                                window.gtag("event", "click", {
-                                                    event_category: "GH clicks",
-                                                    event_label: `${projectList[key].projectTitle} - GitHub`,
-                                                });
-                                            }
-                                        }}
-                                        className='gitSiteLink'
-                                    >
-                                        Code
-                                    </OutboundLink>
-                                    {projectList[key].siteLink && (
-                                        <OutboundLink href={projectList[key].siteLink}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            onClick={() => {
-                                                if (typeof window !== "undefined") {
-                                                    window.gtag("event", "click", {
-                                                        event_category: "project site clicks",
-                                                        event_label: `${projectList[key].projectTitle} - site`,
-                                                    });
-                                                }
-                                            }}
-                                            className='gitSiteLink'>Site</OutboundLink>)}
-                                    {projectList[key].playGround && (
-                                        <OutboundLink href={projectList[key].playGround}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            onClick={() => {
-                                                if (typeof window !== "undefined") {
-                                                    window.gtag("event", "click", {
-                                                        event_category: "playground clicks",
-                                                        event_label: `${projectList[key].projectTitle} - playground`,
-                                                    });
-                                                }
-                                            }}
-                                            className='gitSiteLink'>Try it</OutboundLink>)}
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                                            <motion.div variants={gridChildren} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid" key={key}>
+                                                <div className="item">
+                                                    <Zoom>
+                                                        <img
+                                                            src={projectList[key].projectSS}
+                                                            alt={projectList[key].projectTitle}
+                                                            className="img-fluid"
+                                                            aria-label="hidden"
+                                                        />
+                                                    </Zoom>
+                                                </div>
+                                                <div className="item projectDescription">
+                                                    <p className="projectTitle">
+                                                        {projectList[key].projectTitle}
+                                                    </p>
+                                                    {projectList[key].projectDescription && (
+                                                        <div>
+                                                            {projectList[key].projectDescription}
+                                                        </div>
+                                                    )}
+                                                    <div>
+                                                        <OutboundLink href={projectList[key].gitHubLink}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                            onClick={() => handleLinkClick("GitHub",projectList[key].projectTitle, projectList[key].gitHubLink)}
+                                                            className='gitSiteLink'
+                                                        >
+                                                            Code
+                                                        </OutboundLink>
+                                                        {projectList[key].siteLink && (
+                                                            <OutboundLink href={projectList[key].siteLink}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                                onClick={() => handleLinkClick("Site",projectList[key].projectTitle, projectList[key].siteLink)}
+                                                                className='gitSiteLink'>Site</OutboundLink>)}
+                                                        {projectList[key].playGround && (
+                                                            <OutboundLink href={projectList[key].playGround}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                                onClick={() => handleLinkClick("Playground", projectList[key].projectTitle, projectList[key].playGround)}
+                                                                className='gitSiteLink'>Try it</OutboundLink>)}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
                 </motion.div>
             </div >
         </div>
