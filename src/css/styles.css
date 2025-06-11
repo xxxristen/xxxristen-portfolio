@@ -28,6 +28,7 @@ a:hover {
 #navbarX {
     padding-top: 3rem;
     padding-right: 5rem;
+    background: #161616;
 }
 
 .nav-item ::after {

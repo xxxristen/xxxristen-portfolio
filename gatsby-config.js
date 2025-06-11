@@ -56,28 +56,7 @@ module.exports = {
 
           // Include GTM in development.
           // Defaults to false meaning GTM will only be loaded in production.
-          includeInDevelopment: false,
-        },
-      },
-      {
-        resolve: `gatsby-plugin-google-gtag`,
-        options: {
-          trackingIds: [process.env.GATSBY_GA4TAG1, process.env.GATSBY_GA4TAG2],
-          gtagConfig: {
-            anonymize_ip: true,
-            cookie_expires: 0,
-          },
-          // This object is used for configuration specific to the gtag plugin
-          pluginConfig: {
-            // Puts tracking script in the head instead of the body
-            head: false,
-            // Setting this parameter is also optional
-            respectDNT: true,
-            // Avoids sending pageview hits from custom paths
-            // exclude: ["/preview/**", "/do-not-track/me/too/"],
-            // Delays processing pageview events on route update (in milliseconds)
-            delayOnRouteUpdate: 0,
-          },
+          includeInDevelopment: true,
         },
       },
     ]

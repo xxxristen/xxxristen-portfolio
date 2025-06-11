@@ -28,7 +28,7 @@ const handleLinkClick = (linkKey, href) => {
             show: { opacity: 1, transition: { duration: 1 } },
             hidden: { opacity: 0 }
         }}>
-        <Navbar expand="sm" id="navbarX" className='navbar-dark'>
+        <Navbar expand="sm" id="navbarX" className='navbar-dark fixed-top'>
             <Container fluid>
                 <Navbar.Toggle aria-controls="navbarNav"/>
                 <Navbar.Collapse id="navbarNav" className="flex justify-content-end">
