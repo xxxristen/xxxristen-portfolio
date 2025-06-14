@@ -35,7 +35,7 @@ export const Hello = () => {
                 and identify gaps.
             </p>
             <p className="mt-4">
-                I&#39;ve just completed my full stack developer bootcamp and look forward to
+                I&#39;ve completed my full stack developer bootcamp and look forward to
                 embark on an exciting journey as one.
             </p>
         </motion.div>

@@ -9,6 +9,7 @@ main {
     font-weight: 400;
     background-color: #161616;
     height: 100vh;
+    padding-top:4rem;
 }
 
 img {

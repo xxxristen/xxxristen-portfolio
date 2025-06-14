@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
+//import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Webrew from "../images/projects/capstone-webrew.webp";
@@ -213,26 +213,26 @@ export const Projects = () => {
                                                         </div>
                                                     )}
                                                     <div>
-                                                        <OutboundLink href={projectList[key].gitHubLink}
+                                                        <a href={projectList[key].gitHubLink}
                                                             target="_blank"
                                                             rel="noreferrer"
                                                             onClick={() => handleLinkClick("GitHub",projectList[key].projectTitle, projectList[key].gitHubLink)}
                                                             className='gitSiteLink'
                                                         >
                                                             Code
-                                                        </OutboundLink>
+                                                        </a>
                                                         {projectList[key].siteLink && (
-                                                            <OutboundLink href={projectList[key].siteLink}
+                                                            <a href={projectList[key].siteLink}
                                                                 target="_blank"
                                                                 rel="noreferrer"
                                                                 onClick={() => handleLinkClick("Site",projectList[key].projectTitle, projectList[key].siteLink)}
-                                                                className='gitSiteLink'>Site</OutboundLink>)}
+                                                                className='gitSiteLink'>Site</a>)}
                                                         {projectList[key].playGround && (
-                                                            <OutboundLink href={projectList[key].playGround}
+                                                            <a href={projectList[key].playGround}
                                                                 target="_blank"
                                                                 rel="noreferrer"
                                                                 onClick={() => handleLinkClick("Playground", projectList[key].projectTitle, projectList[key].playGround)}
-                                                                className='gitSiteLink'>Try it</OutboundLink>)}
+                                                                className='gitSiteLink'>Try it</a>)}
                                                     </div>
                                                 </div>
                                             </motion.div>
